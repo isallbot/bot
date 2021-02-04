@@ -519,13 +519,13 @@ const getRegisteredRandomId = () => {
 					for (let block of blocked) {
 						teks += `~> @${block.split('@')[0]}\n`
 					}
-					teks = `Total : ${blocked.length}`
+					teks += `Total : ${blocked.length}`
 					client.sendMessage(from, teks.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": blocked}})
 					break 
 				case 'banlist':
 				ben = '```List Banned``` :\n'
 					for (let banned of ban) {
-						ben += `~> @${banned.split('@')[0]}\n`
+						ben = `~> @${banned.split('@')[0]}\n`
 					}
 					ben = `Total : ${ban.length}`
 					client.sendMessage(from, ben.trim(), extendedText, {quoted: mek, contextInfo: {"mentionedJid": ban}})
